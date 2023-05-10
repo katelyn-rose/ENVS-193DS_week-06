@@ -1,0 +1,39 @@
+---
+title: "week 6 code"
+author: "Katie Miller"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Set up
+
+```{r package-set-up}
+library(tidyverse)
+library(here)
+library(naniar)
+
+library(skimr)
+library(plotly)
+library(magick)
+library(NatParksPalettes)
+library(wesanderson)
+library(patchwork)
+```
+
+# load in data
+
+```{r loading-data}
+whales <- read_csv(here("data", "Graywhale_watching_2007_2019.csv"))
+```
+
+look at missing data
+```{r miss-data-vis}
+gg_miss_var(whales)
+```
+
+use skimr to glimpse data
+```{r}
+skim(whales)
+```
+
+
